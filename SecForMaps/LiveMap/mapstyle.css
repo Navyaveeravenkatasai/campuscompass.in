@@ -1,0 +1,296 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alumni+Sans+Collegiate+One&family=Cinzel&family=DM+Serif+Display:ital@0;1&family=GFS+Didot&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+}
+body {
+  position: relative;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: rgba(0, 0, 0, 01); /* dim the background */
+}
+
+a:link,
+a:visited {
+  background-color: transparent;
+  color: black;
+  border: 2px solid transparent;
+  padding: 5px;
+  text-align: center;
+  text-decoration: double;
+  display: inline-block;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a:hover,
+a:active {
+  background-color: transparent;
+  color: white;
+  font-size: 125%;
+}
+
+.logo {
+  width: 10%;
+}
+
+#map {
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0.9;
+  width: 75%;
+  height: 75%;
+  margin: auto;
+  margin-top: 10%;
+  border: 5px ridge transparent;
+  background-size: cover;
+  margin-bottom: 50px;
+  border-radius: 25px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+}
+.mapboxgl-popup {
+  max-width: 400px;
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-popup-content {
+  /*  popup content */
+  text-align: center;
+  font-weight: 700;
+}
+#myVideo {
+  position: fixed;
+  background-repeat: repeat;
+  background-size: cover;
+  right: 0;
+  bottom: 0;
+  opacity: 0.32;
+  width: 100vw;
+  /* height: 100vh; */
+  z-index: -2;
+}
+.Heading {
+  margin: 0;
+  width: 30%;
+  z-index: -1;
+}
+.subheading {
+  font-size: 90%;
+  margin: 2px;
+  margin-top: 0;
+  padding-left: 12%;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: "DM Serif Display", serif;
+}
+
+#menu {
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+.btn {
+  width: 125px;
+  height: 50px;
+  font-size: 15px;
+  margin-right: 35px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border: none;
+  outline: none;
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0.537);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 70px;
+}
+
+.btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 60px;
+}
+
+.btn:active {
+  color: #000;
+}
+
+.btn:active:after {
+  background: transparent;
+  font-size: 17px;
+}
+
+.btn:hover:before {
+  opacity: 1;
+}
+
+.btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(92, 125, 137, 0.892);
+  left: 0;
+  top: 0;
+  border-radius: 70px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+/* .Mapoverlay_2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 01); /* dim the background 
+} */
+
+@media (max-width: 768px) {
+  .body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #d37575;
+    overflow: hidden;
+  }
+  #map {
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0.87;
+    width: 75%;
+    height: 75%;
+    margin: auto;
+    margin-top: 40%;
+    border: 5px ridge transparent;
+    background-size: cover;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+  }
+  .logo {
+    top: 0;
+    margin-top: 0;
+    width: 8vh;
+  }
+  .subheading {
+    font-size: 2vh;
+    top: 0;
+    padding-left: 0;
+  }
+  .Heading {
+    margin-bottom: 0px;
+    width: 15vh;
+    z-index: -1;
+  }
+  .button {
+    margin-top: 25vh;
+    margin-left: 13vw;
+    width: 30vh;
+    height: 10vh;
+    font-size: 2.9vh;
+  }
+  #myVideo {
+    position: fixed;
+    background-repeat: repeat;
+    right: 0;
+    bottom: 0;
+    opacity: 0.32;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+
+    z-index: -2;
+  }
+  .btn {
+    width: 15vh;
+    height: 3vh;
+    padding-top: 0%;
+    font-size: 1vh;
+  }
+  .navbar {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 15vh;
+    display: block;
+  }
+  .info {
+    font-size: 2.5vh;
+  }
+  .righthome {
+    margin-left: 7%;
+    margin-top: 10%;
+    margin-right: 7%;
+    width: 75vw;
+  }
+  .name {
+    margin-top: 29vh;
+  }
+  .ine {
+    margin-top: 20vh;
+  }
+}

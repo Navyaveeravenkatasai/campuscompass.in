@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CampusCompass</title>
+    <link rel="logo icon" href="/logo0071.png" type="image/icon type" />
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://api.mazemap.com/js/v2.0.114/mazemap.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://api.mazemap.com/js/v2.0.114/mazemap.min.js"
+    ></script>
+    <link href="/SecForMaps/LiveMap/mapstyle.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <video src="/003.mp4" id="myVideo" autoplay muted loop></video>
+    <div id="menu">
+      <div id="menu-wrapper">
+        <image src="/logo0071.png" class="logo" />
+        <image src="/peru1.png" class="Heading" />
+        <h3 class="subheading">Find your way around campus</h3>
+      </div>
+      <div class="navbar">
+        <button class="btn"><a href="/index.html">Home</a></button>
+        <button class="btn"><a href="/SecForMaps/Map.html">Map</a></button>
+        <button class="btn"><a href="/Faculty/samp45.html">Faculty</a></button>
+        <button class="btn">
+          <a href="/Management/management.html">Management</a>
+        </button>
+        <button class="btn">
+          <a href="/About Us/about.us.html">About Us</a>
+        </button>
+      </div>
+    </div>
+
+    <div id="map">
+      <div class="Mapoverlay2"></div>
+    </div>
+    <mapbox-search-box
+      access-token="pk.eyJ1Ijoiam9obi1wcmFiaGFzLTAwNyIsImEiOiJjbHByMnpwcHgwNmJ5MnBxY3p1djQweHJnIn0.f8vtXMNSy17yAkMg6huZig"
+      proximity="0,0"
+    >
+    </mapbox-search-box>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css"
+      type="text/css"
+      class="ine"
+    />
+    <script src="/SecForMaps/LiveMap/config.js"></script>
+    <script src="/SecForMaps/LiveMap/mapscript.js"></script>
+  </body>
+</html>

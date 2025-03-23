@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CollegeMap</title>
+    <link rel="logo icon" href="/Logo0071.png" type="image/icon type" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;700&family=Kalnia:wght@300;400;500;600&family=Rowdies&family=Space+Grotesk:wght@700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "DM Serif Display", serif;
+      }
+      body {
+        width: 100vw;
+        background-size: cover;
+        margin-bottom: 0px;
+        overflow-x: hidden;
+        background-color: #000;
+      }
+      .Home {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+      .righthome {
+        margin-left: 0%;
+        margin-top: 10%;
+        margin-right: 7%;
+        width: 50%;
+      }
+      #menu {
+        overflow: hidden;
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+      }
+      .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        width: 10%;
+      }
+      #myVideo {
+        position: fixed;
+        background-repeat: repeat;
+        right: 0;
+        bottom: 0;
+        opacity: 0.32;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* height: 100vh; */
+        z-index: -2;
+      }
+      .Heading {
+        margin: 0;
+        width: 30%;
+        z-index: -1;
+      }
+      .subheading {
+        font-size: 90%;
+        margin: 2px;
+        margin-top: 0;
+        padding-left: 12%;
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #ffffff;
+        font-family: "DM Serif Display", serif;
+      }
+      a:link,
+      a:visited {
+        background-color: transparent;
+        color: black;
+        border: 2px solid transparent;
+        padding: 5px;
+        text-align: center;
+        text-decoration: double;
+        display: inline-block;
+      }
+
+      a:hover,
+      a:active {
+        background-color: transparent;
+        color: white;
+        font-size: 125%;
+      }
+      .btn {
+        width: 125px;
+        height: 50px;
+        font-size: 15px;
+        margin-right: 35px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        border: none;
+        outline: none;
+        color: #000000;
+        background-color: rgba(0, 0, 0, 0.537);
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 70px;
+      }
+
+      .btn:before {
+        content: "";
+        background: linear-gradient(
+          45deg,
+          #ff0000,
+          #ff7300,
+          #fffb00,
+          #48ff00,
+          #00ffd5,
+          #002bff,
+          #7a00ff,
+          #ff00c8,
+          #ff0000
+        );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 60px;
+      }
+
+      .btn:active {
+        color: #000;
+      }
+
+      .btn:active:after {
+        background: transparent;
+        font-size: 15px;
+      }
+
+      .btn:hover:before {
+        opacity: 1;
+      }
+
+      .btn:after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(92, 125, 137, 0.892);
+        left: 0;
+        top: 0;
+        border-radius: 70px;
+      }
+
+      @keyframes glowing {
+        0% {
+          background-position: 0 0;
+        }
+        50% {
+          background-position: 400% 0;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .scrollable-content {
+        scrollbar-width: thin;
+        scrollbar-color: #888 #f1f1f1;
+      }
+      @media (max-width: 768px) {
+        .logo {
+          width: 10%;
+        }
+      }
+      .map {
+        margin-top: 8%;
+        margin-left: 15%;
+        margin-right: 10%;
+        width: 70%;
+        height: 70%;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.9;
+      }
+      @media (max-width: 768px) {
+        .logo {
+          width: 10%;
+        }
+      }
+      .map {
+        margin-top: 8%;
+        margin-left: 15%;
+        margin-right: 10%;
+        width: 70%;
+        height: 70%;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.9;
+      }
+      @media (max-width: 768px) {
+        .body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #d37575;
+          overflow: hidden;
+        }
+        .logo {
+          top: 0;
+          margin-top: 0;
+          width: 8vh;
+        }
+        .subheading {
+          font-size: 2vh;
+          top: 0;
+          padding-left: 0;
+        }
+        .Heading {
+          margin-bottom: 0px;
+          width: 15vh;
+          z-index: -1;
+        }
+        .button {
+          margin-top: 25vh;
+          margin-left: 13vw;
+          width: 30vh;
+          height: 10vh;
+          font-size: 2.9vh;
+        }
+        .btn {
+          width: 15vh;
+          height: 3vh;
+          padding-top: 0%;
+          font-size: 1vh;
+        }
+        .navbar {
+          margin-top: 0;
+          margin-bottom: 0;
+          margin-left: 15vh;
+          display: block;
+        }
+        .info {
+          font-size: 2.5vh;
+        }
+        .righthome {
+          margin-left: 7%;
+          margin-top: 10%;
+          margin-right: 7%;
+          width: 75vw;
+        }
+        .name {
+          margin-top: 29vh;
+        }
+        .map {
+          margin-top: 25vh;
+          width: 125vw;
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="/003.mp4" type="video/mp4" />
+    </video>
+    <div id="menu">
+      <div id="menu-wrapper">
+        <image src="/logo0071.png" class="logo" />
+        <image src="/peru1.png" class="Heading" />
+        <h3 class="subheading">Find your way around campus</h3>
+      </div>
+      <div class="navbar">
+        <button class="btn"><a href="/index.html">Home</a></button>
+        <button class="btn"><a href="/SecForMaps/Map.html">Map</a></button>
+        <button class="btn"><a href="/Faculty/samp45.html">Faculty</a></button>
+        <button class="btn">
+          <a href="/Management/management.html">Management</a>
+        </button>
+        <button class="btn"><a href="/About Us/about.us.html">About Us</a></button>
+      </div>
+    </div>
+    <img src="/SecForMaps/MapImages/NEW BLOCK 1.png" class="map" />
+  </body>
+</html>
